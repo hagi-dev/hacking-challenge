@@ -1,0 +1,267 @@
+@import './variables.scss';
+@import './function.scss';
+
+$base-images: "~/src/assets/images";
+
+$max-width: (
+  desktop: remy(1360),
+);
+
+$a--bar-loading: (
+  background: (
+    base: map-get($colors, primary ),
+    inverse: map-get($colors, secondary ),
+  ),
+);
+
+
+$a--general:(
+  border:(
+    border-radius: remy(8),
+    color:(
+      base: map-get($colors, general-base ),
+      active: map-get($colors, primary ),
+    )
+  ),
+  background: (
+  primary: map-get($colors, white ),
+  secondary: map-get($colors, primary ),
+  tertiary: #eceef7,
+  )
+);
+
+$a--button: (
+  background: (
+    active: map-get($colors, primary ),
+    disabled: map-get($colors, primary-disabled),
+    active-inverse: map-get($colors, white ),
+    disabled-inverse: map-get($colors, white ),
+    hover: map-get($colors, primary-disabled),
+  ),
+  border: (
+    active: map-get($colors, primary ),
+    disabled: map-get($colors, primary-disabled),
+    hover: map-get($colors, primary-disabled),
+    inverse: #6f7dff
+  ),
+  color: (
+    active: map-get($colors, white ),
+    disabled: map-get($colors, white ),
+    active-inverse: map-get($colors, primary ),
+    disabled-inverse: map-get($colors, primary-disabled),
+    hover: map-get($colors, primary-disabled),
+    icon: (
+      active: map-get($colors, tertiary),
+    ),
+  ),
+  font: (
+    family: map-get($font-family, primary),
+    size: remy(14),
+    style: normal,
+    weight: 600,
+    spacing: 0.800000011920929px,
+    line-height: remy(16),
+  ),
+  padding: (
+    top: remy(20),
+    right: remy(32),
+    bottom: remy(20),
+    left: remy(32),
+  ),
+  border-radius: remy(8),
+  height: remy(56),
+  letter: remy(0.8),
+);
+
+$a--icon-text: (
+  size: remy(20),
+  weight: 400,
+  color: (
+    base: map-get($colors, primary ),
+    inverse: map-get($colors, tertiary),
+    active: map-get($colors, white ),
+    none: transparent,
+    checked: map-get($colors, accept ),
+  ),
+  width: remy(24),
+  height: remy(24),
+  padding: remy(6),
+  border-radius: 50%,
+  font: (
+    family: map-get($font-family, primary),
+    size: remy(12),
+    style: normal,
+    weight: 600,
+    letter: remy(0.8),
+    line-height: remy(16),
+    color: (
+      text-active: map-get($colors, white ),
+      text-desactive: map-get($colors, primary ),
+      text-desactive-inverse: map-get($colors, tertiary),
+      text-list: map-get($colors, input),
+    ),
+  ),
+);
+
+$a--input: (
+  background: (
+    active: map-get($colors, white ),
+    disabled: #ebebeb,
+  ),
+  border: (
+    active: #c5cbe0,
+  ),
+  color: (
+    active: map-get($colors, input),
+    disabled: #696c7a,
+    active-inverse: map-get($colors, white ),
+    disabled-inverse: map-get($colors, white ),
+  ),
+  font: (
+    family: map-get($font-family, primary),
+    size: remy(16),
+    style: normal,
+    weight: 400,
+    spacing: 0px,
+    line-height: remy(24),
+    letter: 0.2,
+  ),
+  padding: (
+    top: remy(15),
+    right: remy(16),
+    bottom: remy(15),
+    left: remy(16),
+  ),
+  border-radius: remy(5),
+  height: remy(56),
+  checkbox: (
+    background: (
+      checked: #7cc954,
+      not-checked: map-get($colors, white ),
+    ),
+    border: (
+      checked: #7cc954,
+      not-checked: #c5cbe0,
+    ),
+  ),
+);
+
+$a--error:(
+  font: (
+    family: map-get($font-family, primary),
+    size: remy(12),
+    style: normal,
+    weight: 400,
+    spacing: 0px,
+    line-height: remy(16),
+    letter: 0px,
+  ),
+  color: (
+    primary: map-get($colors, error ),
+  ),
+);
+
+$a--title: (
+  font: (
+    family: map-get($font-family, primary),
+    size: (
+      mobile-small: remy(16),
+      mobile: remy(24),
+      desktop: remy(28),
+      mobile-banner: remy(20),
+      desktop-banner: remy(36),
+      desktop-small: remy(28),
+    ),
+    style: normal,
+    weight: 400,
+    spacing: 0px,
+    line-height: remy(32),
+    letter: -remy(0.2),
+  ),
+  color: (
+    primary: map-get($colors, input ),
+    secondary: map-get($colors, primary ),
+  ),
+);
+
+$a--subTitle: (
+  font: (
+    family: map-get($font-family, primary),
+    size: (
+      small: remy(12),
+      mobile: remy(16),
+      desktop: remy(20),
+    ),
+    style: normal,
+    weight: (
+      bold: 600,
+      regular: 400,
+      think: 300,
+    ),
+    spacing: 0px,
+    line-height: remy(24),
+    letter: 0px,
+  ),
+  color: (
+    primary: map-get($colors, input),
+    secondary: map-get($colors, primary ),
+  ),
+);
+
+$a--pharagraph: (
+  font: (
+    family: map-get($font-family, secondary),
+    style: normal,
+    weight: (
+      regular: 400,
+      300: 300,
+      think: 200,
+    ),
+    spacing: 0px,
+    line-height: remy(24),
+    letter: 0px,
+    size: (
+      small: remy(12),
+      mediun: remy(14),
+      large: remy(16),
+    ),
+  ),
+  color: (
+    primary: map-get($colors, tertiary),
+    secondary: map-get($colors, input),
+  ),
+);
+
+$a--link: (
+  font: (
+    family: map-get($font-family, primary),
+    size: remy(14),
+    style: normal,
+    weight: 600,
+    spacing: 0.800000011920929px,
+    line-height: remy(16),
+  ),
+  color: (
+    primary: map-get($colors, primary ),
+    secondary: map-get($colors, tertiary),
+    terciary: map-get($colors, tertiary),
+  ),
+  text-decoration: (
+    not-undeline: none,
+    underline: underline,
+  ),
+);
+
+$a--card: (
+  border-radius: remy(8),
+  background: (
+    primary: map-get($colors, white ),
+    secondary: map-get($colors, primary ),
+    tertiary: #eceef7,
+  ),
+  border: (
+    primary: #EDEFFC,
+    secondary: map-get($colors, primary ),
+    tertiary: map-get($colors, tertiary),
+  ),
+);

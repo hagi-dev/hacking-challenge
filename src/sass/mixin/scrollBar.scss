@@ -1,0 +1,24 @@
+@mixin scroll-custom-style {
+    &::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
+    &::-webkit-scrollbar-track {
+        background: #FFFFFF;
+    }
+    &::-webkit-scrollbar-thumb {
+        
+        background: #cccccc;
+        border-radius: 20px;
+    }
+    &::-moz-scrollbar {
+        width: 5px;
+    }
+    &::-moz-scrollbar-track {
+        background: #ffffff;
+    }
+    &::-moz-scrollbar-thumb {
+        background: #cccccc;
+        border-radius: 20px;
+    }
+}

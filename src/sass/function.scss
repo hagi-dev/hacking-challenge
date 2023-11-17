@@ -1,0 +1,5 @@
+$baseFont: 16;
+
+@function remy($px_size){
+  @return calc($px_size/$baseFont)*1rem;
+}

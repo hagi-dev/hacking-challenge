@@ -1,0 +1,8 @@
+@mixin accordionBaseColumn {
+    display: grid;
+    grid-template-columns: 50px 1fr 14px;
+
+    @include mobile {
+        grid-template-columns: 40px 1fr 51px;
+    }
+}

@@ -1,0 +1,86 @@
+@import "src/sass/index.scss";
+
+.tank-you {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: 100%;
+  @include mobile {
+    display: block;
+  }
+  .tank-you__banner {
+    display: grid;
+    place-content: center;
+    // padding: remy(16);
+    .tank-you__banner__image-desktop {
+      width: 100%;
+      height: 100%;
+      max-width: remy(480);
+      @include mobile {
+        display: none;
+        padding: 0 !important;
+      }
+    }
+    .tank-you__banner__image-mobile {
+      width: 100%;
+      display: none;
+      @include mobile {
+        display: block;
+        padding: 0;
+      }
+    }
+  }
+
+  .tank-you__content {
+    display: grid;
+    place-content:  initial;
+    padding: remy(16);
+    margin-top: 8rem;
+    
+    .tank-you__content__container {
+      height: remy(340);
+
+      justify-content: space-between;max-width: remy(450);
+      .tank-you__content__title {
+        font-size: map-get($a--title, font, size, desktop-banner);
+        font-weight: map-get($a--title, font, weight);
+        font-family: map-get($a--title, font, family);
+        .tank-you__content__title--primary {
+          color: map-get($a--title, color, secondary);
+          margin-bottom: remy(8);
+          display: block;
+          @include mobile {
+            font-size: map-get($a--title, font, size, mobile-banner);
+          }
+        }
+        .tank-you__content__title--secondary {
+          color: map-get($a--title, color, primary);
+          display: block;
+          margin-bottom: remy(24);
+          @include mobile {
+            font-size: map-get($a--title, font, size, mobile-banner);
+          }
+        }
+      }
+      .tank-you__content__description,
+      .tank-you__content__email {
+        font-size: map-get($a--pharagraph, font, size, large);
+        font-weight: map-get($a--pharagraph, font, weight, regular);
+        font-family: map-get($a--pharagraph, font, family);
+        color: map-get($a--pharagraph, color, primary);
+        margin-bottom: remy(16);
+      }
+      .tank-you__content__button {
+        margin-top: 2rem;
+      }
+
+      @include mobile {
+        padding: remy(16);
+        height: remy(300);
+      }
+    }
+    @include mobile {
+      margin: 0;
+    }
+  }
+}

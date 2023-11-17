@@ -1,0 +1,14 @@
+@import "src/sass/index.scss";
+
+.plus__path {
+  &.plus__path--base {
+    fill: map-get($a--icon-text, color, base);
+  }
+
+  &.plus__path--inverse {
+    fill: map-get($a--icon-text, color, inverse);
+  }
+  &.plus__path--active {
+    fill: map-get($a--icon-text, color, active);
+  }
+}

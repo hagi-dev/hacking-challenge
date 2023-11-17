@@ -1,0 +1,15 @@
+@import 'src/sass/index.scss';
+
+.arrow-down__path {
+    &.arrow-down__path--base{
+        fill: map-get($a--icon-text, color, base)
+    }
+
+    &.arrow-down__path--inverse{
+        fill: map-get($a--icon-text, color, inverse)
+    }
+
+    &.arrow-down__path--active{
+        fill: map-get($a--icon-text, color, active)
+    }
+}

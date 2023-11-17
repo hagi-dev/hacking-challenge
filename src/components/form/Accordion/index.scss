@@ -1,0 +1,181 @@
+@import "src/sass/index.scss";
+
+.accordion {
+  max-width: remy(385);
+  width: 100%;
+  min-width: remy(300);
+  display: grid;
+  border-bottom: remy(1) solid map-get($a--general, border, color, base);
+
+  .accordion__header {
+    @include accordionBaseColumn;
+    align-items: center;
+    cursor: pointer;
+
+    @include mobile{
+      cursor: default;
+    }
+
+    .accordion__header__image {
+      width: remy(50);
+      height: remy(50);
+
+      @include mobile {
+        width: remy(40);
+        height: remy(40);
+      }
+    }
+
+    .accordion__header__mediun {
+      padding: 0 remy(20);
+      .accordion__header__title {
+        margin: 0;
+        font-size: map-get($a--subTitle, font, size, desktop);
+        font-weight: map-get($a--subTitle, font, weight, regular);
+        color: map-get($a--subTitle, color, primary);
+        font-family: map-get($a--subTitle, font, family);
+        letter-spacing: map-get($a--subTitle, font, letter);
+
+        @include mobile {
+          font-size: map-get($a--subTitle, font, size, mobile);
+        }
+      }
+
+      @include mobile {
+        padding: 0 remy(8);
+      }
+    }
+
+    .accordion__header__icon-top {
+      // estilos para el icono de arriba
+      transition: ease-in-out 0.3s;
+
+      &.accordion__header__icon-top--show {
+        display: block;
+      }
+
+      &.accordion__header__icon-top--hide {
+        display: none;
+      }
+      @include mobile {
+        display: none !important;
+      }
+    }
+
+    .accordion__header__icon-down {
+      // estilos para el icono de abajo
+      transition: ease-in-out 0.3s;
+
+      &.accordion__header__icon-down--show {
+        display: block;
+      }
+
+      &.accordion__header__icon-down--hide {
+        display: none;
+      }
+
+      @include mobile {
+        display: none !important;
+      }
+    }
+
+    .accordion__header__spinner {
+      display: none;
+
+      @include mobile {
+        display: block;
+      }
+    }
+  }
+
+  .accordion__actions {
+    @include accordionBaseColumn;
+
+    margin: 0.5rem 0;
+
+    .accordion__actions__item-add {
+      padding: 0 remy(20);
+      transition: ease-in-out 0.3s;
+
+      &.accordion__actions__item-add--show {
+        display: block;
+      }
+
+      &.accordion__actions__item-add--hide {
+        display: none;
+      }
+    }
+    .accordion__actions__item-remove {
+      transition: ease-in-out 0.3s;
+      padding-left: remy(20);
+      &.accordion__actions__item-remove--show {
+        display: block;
+      }
+
+      &.accordion__actions__item-remove--hide {
+        display: none;
+      }
+    }
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .accordion__body {
+    @include accordionBaseColumn;
+    position: relative;
+
+    .accordion__body__content {
+      .accordion__body__content__text {
+        padding: 0 remy(20);
+        // max-height: 224px;
+        width: 100%;
+        overflow: auto;
+        transition: ease-in-out 0.3s;
+        margin: 0 auto;
+        font-size: map-get($a--pharagraph, font, size, mediun);
+        font-family: map-get($a--pharagraph, font, family);
+        font-weight: map-get($a--pharagraph, font, weight, regular);
+        color: map-get($a--pharagraph, color, primary);
+
+        @include scroll-custom-style;
+        &.accordion__body__content__text--show {
+          height: 100%;
+          padding-bottom: remy(16);
+          @include mobile {
+            padding-top: 0.5rem;
+            padding-bottom: 3rem;
+          }
+        }
+
+        &.accordion__body__content__text--hide {
+          height: 0;
+        }
+        @include mobile {
+          padding: 0 remy(8);
+        }
+      }
+
+      .accordion__body__content__button-icon {
+        display: none;
+        @include mobile {
+          display: block !important;
+        }
+
+        &.accordion__body__content__button-icon--show {
+          @include mobile {
+            position: absolute;
+            bottom: remy(16);
+          }
+        }
+      }
+    }
+
+    @include mobile {
+      grid-template-columns: remy(40) 1fr;
+    }
+  }
+  @include mobile {
+    max-width: remy(296);
+  }
+}

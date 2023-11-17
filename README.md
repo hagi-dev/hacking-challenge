@@ -1,46 +1,108 @@
-# Getting Started with Create React App
+# RIMAC Web App
+Welcome to the documentation for the RIMAC INSURANCE web application. This guide provides an overview of how to set up, run, and use the application.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Developer: <a href="https://github.com/hagi-dev">Hagi Torres Macedo</a> 
+<section style="text-align: center;">
+ <a 
+      href="https://www.linkedin.com/in/hagitorres/" 
+      target="_blank">
+      <img src="https://img.shields.io/badge/LinkedIn-0077b5?style=for-the-badge&logo=linkedin&logoColor=white" alt="Linkedin">
+  </a>
+  <a 
+     href = "hagiraitorresmacedo@gmail.com" 
+     target="_blank">
+     <img src="https://img.shields.io/badge/-Gmail-%23333?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
+ </a>
+</section>
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+1. [Getting Started](#getting-started)
+2. [Problem](#problem)
 
-### `yarn start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To get started with the RIMAC INSURANCE Web App, follow these steps:
 
-### `yarn test`
+1. Clone the repository:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+   ```bash
+   git clone [https://github.com/hagi-dev/hacking-challenge]
+   cd hacking-challenge
+   ## Implementation
+   ## Inatall dependencies
+   yarn install
+   ## Running React App
+   yarn start
 
-### `yarn build`
+2. 
+## The app will be available at http://localhost:3000.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Problem
+# Web Application for Ricmac
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+This project is a web application developed for the company Ricmac using React.js.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Features
 
-### `yarn eject`
+The application includes the following pages:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **Login Page**: Allows users to authenticate in the application. It includes fields to enter the Document Type, document, phone, license plate and a button to send this data.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Build your plain Page**: Shows detailed information about a specific topic. The exact nature of this information will depend on the needs of the Ricmac company (insurance sale).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- **Thank You Page**: It is shown after a user completes a specific action, such as submitting a form. It includes a thank you message and possibly relevant additional information.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Implementation
 
-## Learn More
+The project was implemented following these steps:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+1. Create a React component for the login page.
+2. Create a React component for the build your plan page.
+3. Create a React component for the thank you page.
+4. Implement the logic to navigate between these pages using React Router.
+5. Implement the logic to authenticate users on the login page.
+6. Implement the logic to show build your plan information on the details page.
+7. Implement the logic to show the thank you page after a specific action is completed.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Tech Stack
+
+- React js
+- Typescript
+- sass
+
+## Support
+
+- Author - [Hagi Torres Macedo](https://www.linkedin.com/in/hagitorres/)
+- Contact - [hagiraitorresmacedo@gmail.com](mailto:hagiraitorresmacedo@gmail.com)
+
+## License
+
+This project is [MIT licensed](LICENSE).
+
+## Code Example
+
+Note: This is just a basic skeleton of the application. The components of the LoginPage, BuildYourPlan, and ThankYou pages must be created and customized according to the needs of the Ricmac company.
+
+```jsx
+import { Route, Routes, Navigate } from 'react-router-dom';
+import { LoginPage } from './Login';
+import { BuildYourPlan } from './BuildYourPlan';
+import { ThankYou } from './ThankYou';
+
+const Page = () => {
+  return (
+    <Routes>
+      <Route path="/" element={<Navigate to="/login" />} />
+      <Route path="/login" element={<LoginPage />} />
+      <Route path="/build-your-plan" element={<BuildYourPlan />} />
+      <Route path="/thank-you" element={<ThankYou />} />
+    </Routes>
+  );
+};
+
+export default Page;
+
+

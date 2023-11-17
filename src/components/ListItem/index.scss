@@ -1,0 +1,17 @@
+@import "src/sass/index.scss";
+
+.list-item {
+    width: remy(224);
+  .list-item__option {
+    display: flex;
+    gap: remy(10);
+    align-items: center;
+    margin: remy(8) 0;
+    .list-item__option__text {
+        font-size: map-get($a--pharagraph, font, size, mediun);
+        font-weight: map-get($a--pharagraph, font, weight, regular);
+        font-family: map-get($a--pharagraph, font, family);
+        color: map-get($a--pharagraph, color, primary);
+    }
+  }
+}

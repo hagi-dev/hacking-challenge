@@ -1,0 +1,8 @@
+@mixin max-numbers-text-rows($a--max-numbers) {
+  display: -webkit-box;
+  -webkit-line-clamp: $a--max-numbers;
+  -webkit-box-orient: vertical;
+  line-clamp: $a--max-numbers; /* propiedad estándar */
+  max-height: calc(1.2em * $a--max-numbers); /* altura máxima del elemento */
+  overflow: hidden;
+}

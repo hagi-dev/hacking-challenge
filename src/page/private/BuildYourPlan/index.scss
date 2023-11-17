@@ -1,0 +1,283 @@
+@import "src/sass/index.scss";
+
+.build-your-plan {
+  display: grid;
+  grid-template-columns: 0.6fr 1fr 0.6fr;
+  width: 100%;
+  height: 100%;
+
+  @include tablet {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "path path"
+      "main summary"
+      "main summary";
+  }
+  @include mobile {
+    display: block;
+  }
+
+  .build-your-plan__progress {
+    padding: 2rem 0;
+    height: 100%;
+    background-color: map-get($a--general, background, tertiary);
+    @include tablet {
+      grid-area: path;
+    }
+    @include tablet-down {
+      padding: 0;
+      height: auto;
+    }
+    .build-your-plan__progress__mobile {
+      display: none;
+      @include tablet-down {
+        display: flex;
+        align-items: center;
+        padding-left: remy(16);
+        gap: remy(10);
+        height: remy(40);
+      }
+      .build-your-plan__progress__mobile__bar {
+        width: remy(100);
+        height: remy(5);
+        border-radius: remy(10);
+        background-color: map-get($a--bar-loading, background, inverse);
+      }
+    }
+    .build-your-plan__progress__container {
+      width: 100%;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      place-content: center;
+      height: remy(95);
+
+      @include tablet-down {
+        display: none;
+        height: remy(30);
+      }
+
+      .build-your-plan__progress__container__path {
+        padding-left: calc(map-get($a--icon-text, width) / 2);
+      }
+    }
+  }
+  .build-your-plan__content {
+    padding: remy(16);
+    display: grid;
+    place-content: center;
+
+    @include tablet {
+      grid-area: main;
+    }
+
+    .build-your-plan__content__back {
+      @include tablet-down {
+        display: none;
+      }
+    }
+
+    .build-your-plan__content__text {
+      .build-your-plan__content__text__title {
+        font-size: map-get($a--title, font, size, desktop-banner);
+        font-weight: map-get($a--title, font, weight);
+        font-family: map-get($a--title, font, family);
+        color: map-get($a--title, color, primary);
+        margin-bottom: 0.2rem;
+        margin-top: remy(16);
+
+        .build-your-plan__content__text__title--secondary {
+          color: map-get($a--title, color, secondary);
+        }
+
+        @include mobile {
+          font-size: map-get($a--title, font, size, mobile-banner);
+        }
+      }
+      .build-your-plan__content__text__pharagraph {
+        font-size: map-get($a--pharagraph, font, size, large);
+        font-weight: map-get($a--pharagraph, font, weight, regular);
+        font-family: map-get($a--pharagraph, font, family);
+        color: map-get($a--pharagraph, color, primary);
+      }
+    }
+
+    .build-your-plan__content__card {
+      margin-top: remy(18);
+      .build-your-plan__content__card__container {
+        width: remy(384);
+        height: remy(172);
+        border-radius: map-get($a--card, border-radius);
+        border: remy(2) solid map-get($a--card, border, primary);
+        padding: 0 remy(32);
+        position: relative;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .build-your-plan__content__card__body {
+          width: remy(192);
+          .build-your-plan__content__card__body__plate {
+            font-size: map-get($a--pharagraph, font, size, small);
+            font-weight: map-get($a--pharagraph, font, weight, regular);
+            font-family: map-get($a--pharagraph, font, family);
+            color: map-get($a--pharagraph, color, primary);
+            margin-bottom: 0.2rem;
+          }
+          .build-your-plan__content__card__body__model {
+            font-size: map-get($a--subTitle, font, size, desktop);
+            font-weight: map-get($a--subTitle, font, weight, regular);
+            font-family: map-get($a--subTitle, font, family);
+            color: map-get($a--subTitle, color, primary);
+            margin: 0;
+          }
+        }
+        .build-your-plan__content__card__image {
+          position: absolute;
+          right: 0;
+          top: -6%;
+          @include mobile {
+            img {
+              height: remy(16)y(56);
+            }
+          }
+        }
+        @include mobile {
+          width: remy(296);
+          height: remy(148);
+        }
+      }
+    }
+    .build-your-plan__content__sum-assured {
+      .build-your-plan__content__sum-assured__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: remy(384);
+        padding-top: remy(8);
+        padding-bottom: remy(40);
+        margin-top: remy(32);
+        border-bottom: 2px solid map-get($a--card, border, primary);
+        .build-your-plan__content__sum-assured__description {
+          .build-your-plan__content__sum-assured__title {
+            font-size: map-get($a--subTitle, font, size, mobile);
+            font-weight: map-get($a--subTitle, font, weight, regular);
+            font-family: map-get($a--subTitle, font, family);
+            color: map-get($a--subTitle, color, primary);
+            margin: 0;
+          }
+          .build-your-plan__content__sum-assured__pharagraph {
+            font-size: map-get($a--pharagraph, font, size, small);
+            font-weight: map-get($a--pharagraph, font, weight, regular);
+            font-family: map-get($a--pharagraph, font, family);
+            color: map-get($a--pharagraph, color, primary);
+            margin-top: remy(8);
+            display: flex;
+            align-items: center;
+            gap: remy(5);
+          }
+        }
+
+        @include mobile {
+          width: remy(296);
+          flex-wrap: wrap;
+          gap: remy(10);
+        }
+      }
+    }
+
+    .build-your-plan__content__products {
+      .build-your-plan__content__products__container {
+        .build-your-plan__content__products__title {
+          font-size: map-get($a--title, font, size, desktop-s);
+          font-weight: map-get($a--title, font, weight);
+          font-family: map-get($a--title, font, family);
+          color: map-get($a--title, color, primary);
+          margin-bottom: 0.5rem;
+          margin-top: 2rem;
+          .build-your-plan__content__products__title--secondary {
+            color: map-get($a--title, color, secondary);
+          }
+          @include mobile {
+            font-size: map-get($a--title, font, size, mobile-banner);
+          }
+        }
+        .build-your-plan__content__products__skus {
+          .build-your-plan__content__products__skus__item {
+            margin: remy(32) 0;
+          }
+        }
+      }
+      @include mobile {
+        margin-bottom: remy(70);
+      }
+    }
+  }
+  .build-your-plan__summary {
+    padding-right: remy(20);
+    margin-top: remy(320);
+    position: relative;
+    
+    @include tablet {
+      grid-area: summary;
+    }
+    
+    
+    .build-your-plan__summary__container{
+      
+      .build-your-plan__summary__importPay {
+        .build-your-plan__summary__importPay__title {
+          font-size: map-get($a--subTitle, font, size, small);
+          font-weight: map-get($a--subTitle, font, weight, regular);
+          font-family: map-get($a--subTitle, font, family);
+          color: map-get($a--subTitle, color, primary);
+          @include mobile{
+            display: none;
+          }
+        }
+        .build-your-plan__summary__importPay__frequency {
+          font-size: map-get($a--pharagraph, font, size, small);
+          font-weight: map-get($a--pharagraph, font, weight, regular);
+          font-family: map-get($a--pharagraph, font, family);
+          color: map-get($a--pharagraph, color, primary);
+        }
+        .build-your-plan__summary__importPay__amount {
+          font-size: map-get($a--title, font, size, desktop);
+          font-weight: map-get($a--title, font, weight);
+          font-family: map-get($a--title, font, family);
+          color: map-get($a--title, color, primary);
+          @include mobile {
+            font-size: map-get($a--title, font, size, mobile);
+          }
+        }
+      }
+      .build-your-plan__summary__selected-list-sku {
+        margin: remy(16) 0;
+        @include mobile {
+          display: none;
+        }
+      }
+
+      @include tablet {
+        position: relative;
+      }
+
+      @include mobile {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 remy(32);
+        align-items: center;
+        background: bisque;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: remy(100);
+        border-top: remy(2) solid map-get($a--card, border, primary);
+        background: map-get($a--general, background, primary);
+      }
+
+      &.build-your-plan__summary__container--active{
+        position: fixed;
+      }
+    }
+  }
+}

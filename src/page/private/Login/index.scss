@@ -1,0 +1,48 @@
+@import "src/sass/index.scss";
+
+.login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    @include mobile {
+        display: block;
+    }
+    .login__form{
+        width: 100%;
+        height: remy(480);
+        flex-wrap: wrap;
+        display: flex;
+        gap: remy(10);
+        margin: 0 auto;
+        margin-top: 20%;
+        padding: remy(16) 2rem;
+        max-width: remy(450);
+        box-sizing: border-box;
+
+        .form__title{
+            font-size: map-get($a--title, font, size, desktop);
+            font-weight: map-get($a--title, font, weight);
+            font-family: map-get($a--title, font, family);
+            color: map-get($a--title, color, primary);
+            margin-bottom: remy(8);
+
+            @include mobile {
+                font-size: map-get($a--title, font, size, mobile);
+            }
+        }
+
+        .link--secondary{
+            font-weight: map-get($a--link, font, weight);
+            color: map-get($a--link, color, secondary);
+            text-decoration: map-get($a--link, text-decoration, underline );
+        }
+
+        @include mobile {
+            margin-top: remy(24);
+            padding: remy(16) remy(16);
+            max-width: 100%;
+        }
+    }
+
+}

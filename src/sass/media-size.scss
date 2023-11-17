@@ -1,0 +1,48 @@
+@mixin mobile {
+  @media (max-width: map-get($a--layout-breakpoints, sm)) {
+    @content;
+  }
+}
+
+@mixin tablet-small-down {
+  @media (max-width: map-get($a--layout-breakpoints, md)) {
+    @content;
+  }
+}
+
+@mixin tablet-down {
+  @media (max-width: map-get($a--layout-breakpoints, lg)) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: map-get($a--layout-breakpoints, sm) + 1) and (max-width: map-get($a--layout-breakpoints, lg)) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: map-get($a--layout-breakpoints, lg) + 1) and (max-width: map-get($a--layout-breakpoints, xl)) {
+    @content;
+  }
+}
+
+@mixin wide-desktop {
+  @media (min-width: map-get($a--layout-breakpoints, xl) + 1) and (max-width: map-get($a--layout-breakpoints, xxl)) {
+    @content;
+  }
+}
+
+@mixin extra-wide-desktop {
+  @media (min-width: map-get($a--layout-breakpoints, xxl) + 1) {
+    @content;
+  }
+}
+
+// vertical
+@mixin height-100vh {
+  @media (max-height: map-get($a--layout-breakpoints, md)) {
+    @content;
+  }
+}

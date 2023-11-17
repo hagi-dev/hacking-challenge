@@ -1,0 +1,18 @@
+@import "src/sass/index.scss";
+
+.check__path {
+  &.check__path--base {
+    fill: map-get($a--icon-text, color, base);
+  }
+
+  &.check__path--inverse {
+    fill: map-get($a--icon-text, color, inverse);
+  }
+  &.check__path--active {
+    fill: map-get($a--icon-text, color, active);
+  }
+
+  &.check__path--checked {
+    fill: map-get($a--icon-text, color, checked);
+  }
+}

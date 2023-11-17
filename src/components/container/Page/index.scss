@@ -1,0 +1,30 @@
+@import "src/sass/index.scss";
+
+.main {
+  background: map-get($a--general, background, primary);
+  width: 100%;
+  height: 800px;
+  margin: 0 auto;
+  @include height-100vh{
+    height: 100vh;
+  }
+
+  .main__header {
+    height: 64px;
+    border-bottom: remy(2) solid map-get($a--general, border, color, base);
+    &.main__header--hide {
+      display: none;
+    }
+    &.main__header--show {
+      display: block;
+    }
+
+    @include mobile {
+      height: remy(56);
+    }
+  }
+  .main__container {
+    width: 100%;
+    height: 100%;
+  }
+}

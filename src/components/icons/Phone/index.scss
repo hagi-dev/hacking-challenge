@@ -1,0 +1,14 @@
+@import "src/sass/index.scss";
+
+.phone__path {
+  &.phone__path--base {
+    fill: map-get($a--icon-text, color, base);
+  }
+
+  &.phone__path--inverse {
+    fill: map-get($a--icon-text, color, inverse);
+  }
+  &.phone__path--active {
+    fill: map-get($a--icon-text, color, active);
+  }
+}

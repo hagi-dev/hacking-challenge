@@ -1,0 +1,64 @@
+@import "src/sass/index.scss";
+
+.header {
+  display: flex;
+  width: 100%;
+  height: remy(64);
+  max-width: map-get($max-width, desktop );
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 6rem;
+  padding-right: 3rem;
+  position: absolute;
+  z-index: 9;
+  @include mobile {
+    height: remy(56);
+    padding-left: remy(16);
+    padding-right: remy(16);
+  }
+  &.header--active{
+    position: fixed;
+    background-color: map-get($colors, white );
+    box-shadow: 0 0 remy(10) 0 rgba(0, 0, 0, 0.1);
+  }
+  .header__contact {
+    display: flex;
+    align-items: center;
+    gap: remy(20);
+    .header__contact-text {
+      font-weight: map-get($a--pharagraph, font, weight, regular);
+      font-size: map-get($a--pharagraph, font, size, small);
+      font-family: map-get($a--pharagraph, font, family);
+      color: map-get($a--pharagraph, color, primary);
+        @include mobile {
+            display: none;
+        }
+    }
+    .header__contact-number {
+      font-weight: map-get($a--pharagraph, font, weight, 700);
+      font-size: map-get($a--pharagraph, font, size, 14);
+      font-family: map-get($a--pharagraph, font, family);
+      color: map-get($a--pharagraph, color, primary);
+      margin-left: remy(5);
+      display: flex;
+      gap: remy(3);
+      align-items: center;
+      color: map-get($a--link, color, terciary);
+      .header__number-text-mobile {
+        display: none;
+      }
+      .header__number-text-desktop {
+        display: block;
+      }
+
+      @include mobile{
+        .header__number-text-mobile {
+            display: block;
+          }
+          .header__number-text-desktop {
+            display: none;
+          }
+      }
+    }
+  }
+}

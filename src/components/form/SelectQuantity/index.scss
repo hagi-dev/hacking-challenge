@@ -1,0 +1,31 @@
+@import 'src/sass/index.scss';
+
+.select-quantity{
+    max-width: 180px;
+    width: 100%;
+    padding: 16px;
+    border: 1px solid map-get($a--button, border, inverse);
+    border-radius: map-get($a--button, border-radius);
+    .select-quantity__wrapper{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .select-quantity__wrapper__number{
+            font-size: map-get($a--title, size, mobile-small );
+            font-weight: map-get($a--title, weight, 400 );
+            color: map-get($a--title, color, primary );
+            text-align: center;
+            font-family: map-get($a--title, font, family );
+            width: 100%;
+            max-width: 80px;
+            @include mobile{
+                width: 200px;
+            }
+        }
+    }
+
+    @include mobile{
+        max-width: 100%;
+    }
+}

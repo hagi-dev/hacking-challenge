@@ -1,0 +1,47 @@
+@import 'src/sass/index.scss';
+
+.input-container {
+  max-width: 700px;
+  width: 100%;
+  height: remy(56);
+  .input-container__input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 16px;
+    position: relative;
+    font-size: remy(16);
+    font-weight: 400;
+    height: 100%;
+    border-radius: 3px;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    &:focus {
+      border-color: #000;
+    }
+  }
+  .input-container__input--primary {
+    border: 1px solid map-get($a--input, border, active );
+  }
+  .input-container__input--error {
+    border: 1px solid map-get($colors, error );
+    &:focus {
+      border: 1px solid map-get($colors, error );
+    }
+    
+  }
+  .input-container__input--secondary {
+    border: none;
+    border-radius: 0;
+    border-left: 1px solid #ccc;
+    background: transparent;
+  }
+
+  .input-container__error{
+    font-size: 0.75rem;
+    font-family: map-get($a--error, font, family);
+    color: map-get($a--error, color, primary);
+    font-family: map-get($a--error, font, family);
+    font-weight: map-get($a--error, font, weight);
+  }
+}

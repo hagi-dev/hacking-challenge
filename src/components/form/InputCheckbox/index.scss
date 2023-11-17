@@ -1,0 +1,36 @@
+@import "src/sass/index.scss";
+
+.input-checkbox {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: remy(10);
+  align-items: center;
+  cursor: pointer;
+  margin: remy(16) 0;
+  width: 100%;
+  .input-checkbox__input {
+    display: grid;
+    place-content: center;
+    width: 20px;
+    height: 20px;
+    user-select: none;
+    border-radius: map-get($a--input, border-radius);
+    transition: background-color 0.3s ease;
+
+    &.input-checkbox__input--checked {
+      border: 1px solid map-get($a--input, checkbox, border, checked);
+      background-color: map-get($a--input, checkbox, background, checked);
+    }
+    &.input-checkbox__input--not-checked {
+      background-color: map-get($a--input, checkbox, background, not-checked);
+      border: 1px solid map-get($a--input, checkbox, border, not-checked);
+    }
+  }
+  .input-checkbox__children{
+    text-align: left;
+    font-size: map-get($a--pharagraph, font, size, small);
+    font-weight: map-get($a--pharagraph, font, weight, think);
+    font-family: map-get($a--pharagraph, font, family);
+    color: map-get($a--pharagraph, color, primary);
+  }
+}

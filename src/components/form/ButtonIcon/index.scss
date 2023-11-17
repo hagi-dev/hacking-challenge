@@ -1,0 +1,91 @@
+@import "src/sass/index.scss";
+
+.button-icon {
+  display: flex;
+  gap: remy(8);
+  background: none;
+  border: none;
+  outline: none;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  font-family: map-get($a--button, font, family);
+
+  .button-icon__symbol {
+    width: map-get($a--icon-text, width);
+    height: map-get($a--icon-text, height);
+    border-radius: map-get($a--icon-text, border-radius);
+    padding: map-get($a--icon-text, padding);
+    display: grid;
+    place-content: center;
+  }
+
+  .button-icon__text {
+    font-size: map-get($a--icon-text, font, size);
+    font-weight: map-get($a--icon-text, font, weight);
+  }
+
+  &.button-icon--primary {
+    .button-icon__symbol--base {
+      background-color: map-get($a--icon-text, color, base);
+      color: map-get($colors, white);
+    }
+    .button-icon__symbol--inverse {
+      background-color: map-get($a--icon-text, color, inverse);
+      color: map-get($a--icon-text, color, active);
+    }
+    .button-icon__text {
+      &.button-icon__text--base {
+        color: map-get($a--icon-text, font, color, text-desactive);
+      }
+
+      &.button-icon__text--inverse {
+        color: map-get($a--icon-text, font, color, text-desactive-inverse);
+      }
+    }
+  }
+  &.button-icon--secondary {
+    .button-icon__symbol--base {
+      border: remy(2) solid map-get($a--icon-text, color, base);
+      color: map-get($a--icon-text, color, base);
+    }
+    .button-icon__symbol--inverse {
+      border: remy(2) solid map-get($a--icon-text, color, inverse);
+      color: map-get($a--icon-text, color, inverse);
+    }
+
+    .button-icon__text {
+      &.button-icon__text--base {
+        color: map-get($a--icon-text, font, color, text-desactive);
+      }
+
+      &.button-icon__text--inverse {
+        color: map-get($a--icon-text, font, color, text-desactive-inverse);
+      }
+    }
+  }
+  &.button-icon--tertiary {
+    .button-icon__text {
+      display: none;
+      &.button-icon__text--base {
+        display: block !important;
+        color: map-get($a--icon-text, font, color, text-desactive);
+      }
+
+      &.button-icon__text--inverse {
+        display: block !important;
+        color: map-get($a--icon-text, font, color, text-desactive-inverse);
+      }
+    }
+  }
+
+  &.button-icon--disabled {
+    opacity: 0.8;
+    cursor: no-drop;
+
+  }
+
+  @include mobile {
+    // width: 100%;
+  }
+}

@@ -1,0 +1,100 @@
+@import "src/sass/index.scss";
+
+.banner-login {
+  width: 100%;
+  position: relative;
+  background-image: url("#{$base-images}/backgroundDesktop.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: grid;
+  place-content: center;
+  box-sizing: border-box;
+  padding-left: 15%;
+  @include mobile {
+    background-image: url("#{$base-images}/backgroundMobile.png");
+    padding-left: remy(16);
+    min-height: remy(320);
+    justify-content: flex-start;
+    padding-top: 3rem;
+  }
+  .banner-login__content {
+    width: remy(320);
+    text-align: start;
+    @include tablet-small-down{
+        width: remy(300);
+    }
+    .banner-login__description {
+      font-size: map-get($a--pharagraph, font, size, 14);
+      font-weight: map-get($a--pharagraph, font, weight, 400);
+      font-family: map-get($a--pharagraph, font, family);
+      color: map-get($a--pharagraph, color, primary);
+    }
+    .banner-login__title {
+      font-size: map-get($a--title, font, size, desktop-banner);
+      font-weight: map-get($a--title, font, weight);
+      font-family: map-get($a--title, font, family);
+      .banner-login__title--primary {
+        color: map-get($a--title, color, primary);
+      }
+      .banner-login__title--secondary {
+        color: map-get($a--title, color, secondary);
+      }
+
+      @include mobile {
+        font-size: map-get($a--title, font, size, mobile);
+        margin-bottom: remy(8);
+      }
+    }
+    .banner-login__subtitle {
+      font-size: map-get($a--subTitle, font, size, desktop);
+      font-weight: map-get($a--subTitle, font, weight, 600);
+      font-family: map-get($a--subTitle, font, family);
+      color: map-get($a--subTitle, color, primary);
+      margin-bottom: remy(16);
+      @include mobile {
+        font-size: map-get($a--subTitle, font, size, mobile);
+      }
+    }
+    @include mobile{
+        width: 60%;
+    }
+  }
+  .banner-login__image {
+    width: 100%;
+    @include mobile {
+      width: 100%;
+    }
+
+    &.banner-login__image--desktop {
+      display: block;
+      @include mobile {
+        display: none;
+      }
+    }
+    &.banner-login__image--mobile {
+      display: none;
+      @include mobile {
+        width: fit-content;
+        display: block;
+        max-height: 280px;
+        position: absolute;
+        top: 22%;
+        right: 0%;
+      }
+    }
+  }
+  .banner-login__footer {
+    font-size: map-get($a--pharagraph, font, size, small);
+    font-weight: map-get($a--pharagraph, font, weight, think);
+    font-family: map-get($a--pharagraph, font, family);
+    color: map-get($a--pharagraph, color, primary);
+    position: absolute;
+    text-align: center;
+    left: 30%;
+    bottom: 2%;
+
+    @include mobile {
+      display: none;
+    }
+  }
+}

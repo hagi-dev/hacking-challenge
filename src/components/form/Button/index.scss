@@ -1,0 +1,33 @@
+@import 'src/sass/index.scss';
+
+.button{
+    background-color: map-get($a--button, background, active );
+    padding: map-get($a--button, padding, top ) map-get($a--button, padding, right ) map-get($a--button, padding, bottom ) map-get($a--button, padding, left );
+    color: map-get($a--button, color, active );
+    border-radius: map-get($a--button, border-radius );
+    height: map-get($a--button, height );
+    letter-spacing: map-get($a--button, letter );
+    font-size: map-get($a--button, font, size );
+
+    &.button--primary{
+        border: none;
+        background-color: map-get($a--button, background, active );
+    }
+
+    &.button--secondary{
+        border: remy(2) solid map-get($a--button, border, active );
+        background-color: map-get($colors, white );
+    }
+
+    &.button--active{
+        background-color: map-get($a--button, background, active );
+    }
+
+    &.button--disabled{
+        background-color: map-get($a--button, background, disabled );
+    }
+
+    @include mobile {
+        width: 100%;
+    }
+}

@@ -1,0 +1,18 @@
+@import "src/sass/index.scss";
+
+.dropdown-input {
+  min-width: remy(288);
+  width: 100%;
+  height: remy(56);
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  border-radius: 3px;
+  border: 1.05px solid map-get($a--input, border, active);
+}
+
+.dropdrown-input--error{
+  border-color: map-get($colors, error);
+}
+
+
