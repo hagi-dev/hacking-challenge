@@ -11,10 +11,11 @@ export const ThankYou = () => {
   const navigate = useNavigate();
   const { user } = useUser();
   useEffect(() => {
+    console.log("ddewfeferger")
     if (user.id === 0) {
         navigate("/login");
       }
-  }, []);
+  }, [user, navigate]);
   return (
     <Page isHeader={true}>
       <section className="tank-you">

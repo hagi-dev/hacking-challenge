@@ -12,6 +12,7 @@ const Page = () => {
       <Route path="/login" element={<LoginPage />} />
       <Route path="/arma-tu-plan" element={<BuildYourPlan />} />
       <Route path="/gracias" element={<ThankYou />} />
+      <Route path="*" element={<Navigate to="/login" />} />
     </Routes>
   );
 };
