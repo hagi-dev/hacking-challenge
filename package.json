@@ -66,5 +66,8 @@
     "prop-types": "15.8.1",
     "storybook": "^7.5.3",
     "webpack": "5.89.0"
+  },
+  "resolutions": {
+    "strip-ansi": "6.0.0"
   }
 }
