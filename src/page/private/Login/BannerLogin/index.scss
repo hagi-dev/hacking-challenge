@@ -33,6 +33,7 @@
       font-size: map-get($a--title, font, size, desktop-banner);
       font-weight: map-get($a--title, font, weight);
       font-family: map-get($a--title, font, family);
+      margin-bottom: remy(24);
       .banner-login__title--primary {
         color: map-get($a--title, color, primary);
       }
