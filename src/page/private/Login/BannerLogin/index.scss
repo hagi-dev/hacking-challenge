@@ -24,8 +24,8 @@
         width: remy(300);
     }
     .banner-login__description {
-      font-size: map-get($a--pharagraph, font, size, 14);
-      font-weight: map-get($a--pharagraph, font, weight, 400);
+      font-size: map-get($a--pharagraph, font, size, mediun);
+      font-weight: map-get($a--pharagraph, font, weight, regular);
       font-family: map-get($a--pharagraph, font, family);
       color: map-get($a--pharagraph, color, primary);
     }
@@ -48,7 +48,7 @@
     }
     .banner-login__subtitle {
       font-size: map-get($a--subTitle, font, size, desktop);
-      font-weight: map-get($a--subTitle, font, weight, 600);
+      font-weight: map-get($a--subTitle, font, weight, bold);
       font-family: map-get($a--subTitle, font, family);
       color: map-get($a--subTitle, color, primary);
       margin-bottom: remy(16);
