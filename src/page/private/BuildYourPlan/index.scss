@@ -7,11 +7,11 @@
   height: 100%;
 
   @include tablet {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: none;
     grid-template-areas:
-      "path path"
-      "main summary"
-      "main summary";
+      "path path path"
+      "main main summary"
+      "main main summary";
   }
   @include mobile {
     display: block;
